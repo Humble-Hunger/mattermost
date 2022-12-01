@@ -2,7 +2,7 @@ FROM alpine:3.10
 
 # Some ENV variables
 ENV PATH="/mattermost/bin:${PATH}"
-ENV MM_VERSION=5.15.0
+ENV MM_VERSION=5.35.3
 
 # Build argument to set Mattermost edition
 ARG edition=enterprise
@@ -44,4 +44,4 @@ USER mattermost
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
 WORKDIR /mattermost
-CMD ["mattermost", "--config", "/tmp/config.json"]
+CMD ["mattermost"]
